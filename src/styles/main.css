@@ -1,26 +1,26 @@
 body {
-    display: flex;
+    display: flex; 
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
-    margin: 0;
-    background: linear-gradient(to bottom, #151515, #89033a);
-    background-size: 100% 200%;
-    animation: gradientAnimation 8s ease infinite;
-    user-select: none;
+    min-height: 100vh; 
+    margin: 0; 
+    background: linear-gradient(to bottom, #151515, #89033a); /* Define um gradiente de fundo do topo para o fundo */
+    background-size: 100% 200%; /* Ajusta o tamanho do fundo para cobrir a área com um gradiente maior */
+    animation: gradientAnimation 8s ease infinite; /* Aplica a animação do fundo com duração de 8 segundos */
+    user-select: none; /* Desativa a seleção de texto pelo usuário */
 }
 
 @keyframes gradientAnimation {
     0% {
-        background-position: 0% 0%;
+        background-position: 0% 0%; /* Define a posição inicial do fundo */
     }
     50% {
-        background-position: 0% 50%;
+        background-position: 0% 50%; /* Muda a posição do fundo para meio da altura */
     }
     100% {
-        background-position: 0% 0%;
+        background-position: 0% 0%; /* Retorna a posição inicial do fundo */
     }
-}         
+}        
                                                                        
 
 .container{

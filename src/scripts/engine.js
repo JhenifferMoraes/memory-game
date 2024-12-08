@@ -29,13 +29,13 @@ for(let i=0; i < emojis.length; i++)
 }
 
 
-function handleClick(){
-    if(openCards.length < 2){
-        this.classList.add("boxOpen"); 
+function handleClick() {
+    if (openCards.length < 2 && !this.classList.contains("boxMatch")) { // Verifica se a carta já está combinada
+        this.classList.add("boxOpen");
         openCards.push(this);
-
     }
-    if(openCards.length == 2){
+
+    if (openCards.length == 2) {
         setTimeout(checkMatch, 500);
     }
 }
