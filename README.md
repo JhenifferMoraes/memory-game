@@ -3,8 +3,8 @@
 # Projeto Jogo da Memória com Emojis Utilizando JavaScript
 Neste incrível projeto disponibilizado pela Dio para os participantes do Bootcamp Ri Happy - Front-end do Zero, a principal ideia era aprendermos mais sobre HTML, CSS e JavaScript na prática e fixarmos ainda mais diversos conceitos vistos durante o curso. Também era opcional que cada aluno acrescentasse em seu projeto o seu "próprio toque". Sendo assim, fiz algumas melhorias que vi necessidade durante o desenvolvimento, tanto em questões estéticas quanto de funcionamento.
 
-📍 Música na página:  
-Um dos toques de experiência acrescentados foi uma melodia ao entrar na página. Durante o processo, verifiquei que era necessário algo que fizesse com que os áudios funcionassem perfeitamente em todos os navegadores e automaticamente ao iniciar a página. Porém, em alguns navegadores, existem ferramentas que bloqueiam os áudios e, sendo assim, desenvolvi esta estrutura abaixo.  
+📍 Música na página  
+Um dos toques de experiência acrescentados foi uma melodia ao entrar na página. Durante o processo, verifiquei que era necessário algo que fizesse com que os áudios funcionassem perfeitamente em todos os navegadores e automaticamente ao iniciar a página. Porém, em alguns navegadores, existem ferramentas que bloqueiam os áudios e, sendo assim, desenvolvi esta estrutura abaixo:
 ```
 No HTML
     <audio id="background-music" autoplay loop>
@@ -28,8 +28,8 @@ window.onload = function() {
     });
 };
 ```
-📍 Correção na regra de giro das cartas:  
-Uma outra coisa observada era que, ao virar duas cartas e elas combinarem entre si, conseguíamos virar as cartas mais uma vez. Isso ocorria porque não havia nada que impedisse a abertura de uma carta após a combinação ser verificada. Sendo assim, implementei essa solução.  
+📍 Correção na regra de giro das cartas 
+Uma outra coisa observada era que, ao virar duas cartas e elas combinarem entre si, conseguíamos virar as cartas mais uma vez. Isso ocorria porque não havia nada que impedisse a abertura de uma carta após a combinação ser verificada. Sendo assim, implementei essa solução:
 ```
 function handleClick() {
     if (openCards.length < 2 && !this.classList.contains("boxMatch")) {  // 🔴 Verifica se a carta já está combinada
@@ -42,7 +42,18 @@ function handleClick() {
     }
 }
 ```
-📍 Mudanças no CSS:  
+📍 Atualização automática da página
+Foi adicionada uma atualização automática após o usuário vencer o jogo. O código implementado foi o seguinte:
+```
+if(document.querySelectorAll(".boxMatch").length === emojis.length){
+        alert("🔔 Parabéns você venceu! Sua página será regarregada automaticamente.");
+
+        setTimeout(function() {
+            window.location.reload(); // Recarrega a página após 1 segundos
+        }, 1000);  // 1000 milissegundos = 1 segundos
+    }
+```
+📍 Mudanças no CSS
 Também foram alteradas as cores e formatos de botões, mas uma das principais mudanças foi o background, que recebeu um efeito bem legal de movimento entre uma escala de cores escolhidas:  
 ```
 body {
