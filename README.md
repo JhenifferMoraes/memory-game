@@ -17,7 +17,7 @@ No HTML
 ```
 No JS
 window.onload = function() {
-    var music = document.getElementById('background-music');
+    let music = document.getElementById('background-music');
     
     // 🔴 Tenta tocar a música
     music.play().then(() => {
